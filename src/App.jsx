@@ -10,7 +10,6 @@ function App() {
     e.preventDefault();
 
     setTodo([...todo, text]);
-    console.log(todo);
     setText("");
   }
 
@@ -47,7 +46,7 @@ function App() {
 
           return (
             <li key={index}>
-              {item}
+              {item}  &nbsp; &nbsp; &nbsp;
               <button onClick={() => editTodo(index)}> Edit </button>
               <button onClick={() => dltTodo(index)}> Delete </button>
             </li>

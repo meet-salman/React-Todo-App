@@ -28,9 +28,11 @@ h1 {
   font-size: 3.2em;
 }
 
+form{
+  margin-bottom: 50px;
+}
 
 input {
-  margin-right: 10px;
   width: 250px;
   padding: 8px;
   font-size: 1rem;
@@ -40,6 +42,7 @@ input {
 }
 
 button {
+  margin-left: 10px;
   cursor: pointer;
   padding: 8px 15px;
   border: 1px solid gray;
@@ -55,3 +58,15 @@ button:hover {
   background-color: #1a1a1a;
 }
 
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
