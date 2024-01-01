@@ -8,9 +8,21 @@ function App() {
 
   function addTodo(e) {
     e.preventDefault();
+
     setTodo([...todo, text]);
     console.log(todo);
     setText("");
+  }
+
+  function editTodo(index) {
+    const [editedValue, setValue] = useState(prompt("Enter Edited Value"))
+    setTodo(todo[index] = editedValue);
+    // setTodo([...todo]);
+  }
+
+  function dltTodo(index) {
+    todo.splice(index, 1);
+    setTodo([...todo]);
   }
 
   return (
@@ -28,8 +40,8 @@ function App() {
           return (
             <li key={index}>
               {item}
-              <button> Edit </button>
-              <button> Delete </button>
+              <button onClick={() => editTodo(index)}> Edit </button>
+              <button onClick={() => dltTodo(index)}> Delete </button>
             </li>
           )
         })}
