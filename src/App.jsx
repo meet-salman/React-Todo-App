@@ -15,9 +15,17 @@ function App() {
   }
 
   function editTodo(index) {
-    const [editedValue, setValue] = useState(prompt("Enter Edited Value"))
-    setTodo(todo[index] = editedValue);
-    // setTodo([...todo]);
+    const editedValue = prompt("Enter Edited Value");
+
+    if (editedValue !== "") {
+      todo[index] = editedValue;
+      setTodo([...todo]);
+    }
+    else {
+      alert("Please Enter a Value");
+      editTodo(index)
+    }
+
   }
 
   function dltTodo(index) {
@@ -30,7 +38,7 @@ function App() {
       <h1>Todo App</h1>
 
       <form onSubmit={addTodo}>
-        <input type="text" placeholder='Enter Todo' onChange={(e) => setText(e.target.value)} value={text} />
+        <input type="text" placeholder='Enter Todo' onChange={(e) => setText(e.target.value)} value={text} required />
         <button type="submit"> Add </button>
       </form>
 
@@ -46,7 +54,6 @@ function App() {
           )
         })}
       </ul>
-
 
     </>
   )
